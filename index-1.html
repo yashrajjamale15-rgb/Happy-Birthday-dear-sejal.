@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Happy Birthday ❤️</title>
+<style>
+body{margin:0;font-family:Arial;background:#111;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden}
+#lock,#main{text-align:center}input{padding:10px}button{padding:10px 20px}
+#main{display:none;padding:20px}img{max-width:90vw;max-height:60vh;border-radius:20px;box-shadow:0 0 20px #f6c}
+.heart{position:fixed;color:#ff4d88;animation:f 6s linear infinite}
+@keyframes f{from{transform:translateY(100vh)}to{transform:translateY(-20vh)}}
+</style></head><body>
+<div id='lock'><h1>🔐 Enter Password</h1><input id='p' type='password'><br><br><button onclick='go()'>Open ❤️</button><p id='e'></p></div>
+<div id='main'>
+<h1>🎂 Happy Birthday My Love ❤️</h1>
+<img id='ph' src='1000168920.jpg'>
+<p id='t'></p>
+</div>
+<script>
+const imgs=['1000168920.jpg','1000168921.jpg','1000168922.jpg','1000168923.jpg','1000168924.jpg','1000168925.jpg'];
+let i=0;
+function go(){if(p.value==='2803'){lock.style.display='none';main.style.display='block';setInterval(()=>{i=(i+1)%imgs.length;ph.src=imgs[i]},2500);type();hearts()}else e.innerText='Wrong Password ❤️';}
+const msg="Happy Birthday, My Queen! 👑❤️ You are my smile, my peace, my happiness, and my forever. Every heartbeat of mine whispers your name. I promise to love you today, tomorrow, and always. I Love You Forever! 💖🥹🌹🐱";
+function type(){let k=0;let iv=setInterval(()=>{t.innerHTML+=msg[k++]||'';if(k>msg.length)clearInterval(iv)},40)}
+function hearts(){setInterval(()=>{let h=document.createElement('div');h.className='heart';h.innerHTML='❤️';h.style.left=Math.random()*100+'vw';document.body.appendChild(h);setTimeout(()=>h.remove(),6000)},300)}
+</script></body></html>
